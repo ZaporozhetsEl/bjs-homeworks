@@ -28,7 +28,7 @@ function getAverageMark(marks){
     };
 
     let sum = 0;
-    for (let i=0; i <= marks.length; i++) {
+    for (let i=0; i < marks.length; i++) {
         sum += marks[i];
     };
 
@@ -38,15 +38,13 @@ function getAverageMark(marks){
 }
 
 function askDrink(name,dateOfBirthday){
-    let today = new Date();
-    let year = today.getFullYear();
-    let age = year - dateOfBirthday.getFullYear();
+    let age = new Date().getFullYear() - dateOfBirthday.getFullYear();
 
     let result;
 
     if (age >= 18) {
         result = 'Не желаете ли олд-фэшн, ' + name + '?';
-    } else if (age < 18) {
+    } else {
         result = 'Сожалею, ' + name + ', но я не могу вам продать алкоголь. Могу предложить вам замечательный клюквенный компот!';
     }; 
 
